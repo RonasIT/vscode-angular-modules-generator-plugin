@@ -72,7 +72,12 @@ export function activate(context: vscode.ExtensionContext) {
 
   for (const [key, value] of commandsMap) {
     const command = vscode.commands
-      .registerCommand(key, async () => multiStepInput(context, value));
+      .registerCommand(key, async () => {
+        return multiStepInput(context, value)
+          .then((values) => {
+
+          });
+      });
 
     context.subscriptions.push(command);
   }
