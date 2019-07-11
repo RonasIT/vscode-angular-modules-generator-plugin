@@ -1,0 +1,16 @@
+export enum CommandType {
+    SectionModule = 'extension.generateSectionModule',
+    PageModule = 'extension.generatePageModule',
+    PageModuleService = 'extension.generatePageModuleService',
+    PageModuleComponent = 'extension.generatePageModuleComponent',
+    ChildPageModule = 'extension.generateChildPageModule',
+    ChildPageComponent = 'extension.generateChildPageComponent',
+    SharedComponent = 'extension.generateSharedComponent',
+    SharedDirective = 'extension.generateSharedDirective',
+    SharedPipe = 'extension.generateSharedPipe',
+    SharedService = 'extension.generateSharedService',
+    SectionSharedComponent = 'extension.generateSectionSharedComponent',
+    SectionSharedDirective = 'extension.generateSectionSharedDirective',
+    SectionSharedPipe = 'extension.generateSectionSharedPipe',
+    SectionSharedService = 'extension.generateSectionSharedService',
+}

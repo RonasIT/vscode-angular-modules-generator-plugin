@@ -1,0 +1,107 @@
+{
+	"name": "angular-modules-generator",
+	"displayName": "Angular Modules Generator",
+	"description": "Help to generate Angular 7+ modules by using @ronas-it/hygen-angular-modules-generator",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.generateSectionModule",
+		"onCommand:extension.generatePageModule",
+		"onCommand:extension.generatePageModuleService",
+		"onCommand:extension.generatePageModuleComponent",
+		"onCommand:extension.generateChildPageModule",
+		"onCommand:extension.generateChildPageComponent",
+		"onCommand:extension.generateSharedComponent",
+		"onCommand:extension.generateSharedDirective",
+		"onCommand:extension.generateSharedPipe",
+		"onCommand:extension.generateSharedService",
+		"onCommand:extension.generateSectionSharedComponent",
+		"onCommand:extension.generateSectionSharedDirective",
+		"onCommand:extension.generateSectionSharedPipe",
+		"onCommand:extension.generateSectionSharedService"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.generateSectionModule",
+				"title": "Angular Modules Generator: Section Module"
+			},
+			{
+				"command": "extension.generatePageModule",
+				"title": "Angular Modules Generator: Page Module"
+			},
+			{
+				"command": "extension.generatePageModuleService",
+				"title": "Angular Modules Generator: Page Module Service"
+			},
+			{
+				"command": "extension.generatePageModuleComponent",
+				"title": "Angular Modules Generator: Page Component"
+			},
+			{
+				"command": "extension.generateChildPageModule",
+				"title": "Angular Modules Generator: Child Page Module"
+			},
+			{
+				"command": "extension.generateChildPageComponent",
+				"title": "Angular Modules Generator: Child Page Component"
+			},
+			{
+				"command": "extension.generateSharedComponent",
+				"title": "Angular Modules Generator: Shared Component"
+			},
+			{
+				"command": "extension.generateSharedDirective",
+				"title": "Angular Modules Generator: Shared Directive"
+			},
+			{
+				"command": "extension.generateSharedPipe",
+				"title": "Angular Modules Generator: Shared Pipe"
+			},
+			{
+				"command": "extension.generateSharedService",
+				"title": "Angular Modules Generator: Shared Service"
+			},
+			{
+				"command": "extension.generateSectionSharedComponent",
+				"title": "Angular Modules Generator: Section Shared Component"
+			},
+			{
+				"command": "extension.generateSectionSharedDirective",
+				"title": "Angular Modules Generator: Section Shared Directive"
+			},
+			{
+				"command": "extension.generateSectionSharedPipe",
+				"title": "Angular Modules Generator: Section Shared Pipe"
+			},
+			{
+				"command": "extension.generateSectionSharedService",
+				"title": "Angular Modules Generator: Section Shared Service"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.36.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.0.0-next.0"
+	}
+}
