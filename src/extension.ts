@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
         return multiStepInput(context, value)
           .then(async (values) => {
             if (vscode.workspace.rootPath === undefined) {
-              //throw new Error('Please open a project first');
+              throw new Error('Please open a project first');
             }
 
             await generateFiles(value.command, values);
@@ -24,8 +24,10 @@ export function activate(context: vscode.ExtensionContext) {
 
   async function generateFiles(command:string, params: string[]) {
     const terminal = vscode.window.createTerminal('generator');
+    const directoryCommand = `cd ${vscode.workspace.rootPath}`;
     const generatorCommand = 'hygen generator ' + command.replace(/%s/g, () => <string>params.shift());
     
+    terminal.sendText(directoryCommand);
     terminal.sendText(generatorCommand);
     terminal.show();
     //terminal.dispose();
