@@ -1,4 +1,4 @@
-import { window, ExtensionContext } from 'vscode';
+import { ExtensionContext } from 'vscode';
 import { CommandParams } from './interfaces/command-params';
 import { MultiStepInput } from './models/multi-step-input';
 
@@ -64,6 +64,5 @@ export async function multiStepInput(context: ExtensionContext, commandParams: C
 
   const state = await collectInputs();
 
-  //window.showInformationMessage(`Creating ${commandParams.title}`);
-  
+  return state.values;
 }
