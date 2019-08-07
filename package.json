@@ -1,8 +1,8 @@
 {
-	"name": "angular-modules-generator",
+	"name": "vscode-angular-modules-generator-plugin",
 	"displayName": "Angular Modules Generator",
 	"description": "Help to generate Angular 7+ modules by using @ronas-it/hygen-angular-modules-generator",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "wills0n",
 	"engines": {
 		"vscode": "^1.36.0"

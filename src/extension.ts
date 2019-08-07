@@ -22,8 +22,8 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(command);
   }
 
-  async function generateFiles(command:string, params: string[]) {
-    const terminal = vscode.window.createTerminal('generator');
+  async function generateFiles(command:string, params: string[]): Promise<void> {
+    const terminal = getOrCreateTerminal();
     const directoryCommand = `cd ${vscode.workspace.rootPath}`;
     const generatorCommand = 'hygen generator ' + command.replace(/%s/g, () => <string>params.shift());
     
@@ -31,6 +31,12 @@ export function activate(context: vscode.ExtensionContext) {
     terminal.sendText(generatorCommand);
     terminal.show();
     //terminal.dispose();
+  }
+
+  function getOrCreateTerminal(): vscode.Terminal {
+    const terminal = vscode.window.terminals.find((terminal) => terminal.name === 'generator');
+
+    return (terminal !== undefined) ? terminal : vscode.window.createTerminal('generator');
   }
 }
 
